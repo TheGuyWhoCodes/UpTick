@@ -1,0 +1,17 @@
+body {
+  color:#eee;
+  background-color: #1f1f1f;
+}
+
+.square{
+  background-color: #282828;
+  width:28vw;
+  height:500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+  align-items: center;
+
+}
