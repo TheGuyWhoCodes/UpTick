@@ -7,11 +7,19 @@ body {
   background-color: #282828;
   width:28vw;
   height:500px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   resize: vertical;
   align-items: center;
+  margin-top: 1.5rem;
 
+}
+
+/* MOBILE STYLING */
+
+@media (max-width: 992px) {
+  .square{
+    width:95vw;
+  }
 }

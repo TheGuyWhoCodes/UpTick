@@ -11,6 +11,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- In-document CSS -->
+    <link rel="stylesheet" href = "css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src = "js/onLoad.js"></script>
 
@@ -21,9 +22,7 @@
       crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
      <script>
-    window.onload = setTimeout(function() {
-          loadPlexStatus()}, 5 * 1000);
-
+        loadAll();
     </script>
 
   </head>
@@ -60,13 +59,15 @@
         <div class="col-md-4">
           <div class = "square">
             <img src = "images/plex.svg" style="height: 6em;width: 28em; margin-top: 2em; margin-bottom:2em;">
-            <h4>PLEX Server Status <p id = "plexStatus"></p></h4>
-            <h4>Number of Users Connected: <h4 id ="demo"></h4></h4>
+            <h3>PLEX Server Status: <p id = "plexStatus"></p></h3>
+            <h4>Number of Users Connected: </h4><h4 id ="demo"></h4>
           </div>
         </div>
         <div class="col-md-4">
           <div class = "square">
-
+            <i class="fa fa-server fa-5x" aria-hidden="true"></i>
+            <h3>ZEN Status: <i id = "zen-up" class="fa fa-times fx-5x" aria-hidden="true"></i></h3>
+            <h4>Apache VM: <i id = "zen-up" class="fa fa-times fx-5x" aria-hidden="true"></i></h4>
           </div>
 
         </div>

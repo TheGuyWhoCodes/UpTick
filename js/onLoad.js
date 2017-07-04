@@ -1,6 +1,41 @@
 function loadAll(){
-    loadPlexStatus();
+  checkServerStat();
+  loadPlexStatus();
 }
+function checkServerStat(){
+  var apacheUp = false;
+  var zenUp = false;
+  $(document).ready(function(){
+      $.ajax({url: "http://192.168.1.85:32400/status/sessions/?X-Plex-Token=khuW5n4ZKKepeurjsCDH",
+              dataType: "xml",
+              statusCode: {
+                  200: function (response) {
+                      alert('status 200');
+                      zenUp = true;
+                  },
+                  404: function (response) {
+                      alert('status  404 ');
+                  }
+              }
+       });
+  });
+  $(document).ready(function(){
+      $.ajax({url: "http://192.168.1.90/output.json",
+              dataType: "html",
+              statusCode: {
+                  200: function (response) {
+                      alert('status 200, apache');
+                      apacheUp = true;
+                  },
+                  404: function (response) {
+                      alert('status  404 ');
+                  }
+              }
+       });
+  });
+
+}
+
 function loadPlexStatus(xml){
   var xhttp;
   xhttp = new XMLHttpRequest();
@@ -28,5 +63,4 @@ if(xhttp != null){
   document.getElementById("plexStatus").innerHTML = "ur fucked ";
 
 }
-
 }
