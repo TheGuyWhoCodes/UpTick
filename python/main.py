@@ -1,6 +1,7 @@
 import psutil
 import json
 data = {}
+pidName = {}
 
 for pid in psutil.pids():
         p = psutil.Process(pid)
